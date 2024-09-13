@@ -16,15 +16,29 @@ public class Combinations {
         Set<String> str =  Set.of("Admin", "Super", "Employee");
 //        System.out.println(str);
 
+        combinations(str,
+                 2);
+        combinations(str,
+                3);
+        combinations(str,
+                1);
+
+
+
+
+    }
+
+    public static void combinations (Set<String> array , int size_of_agrupation) {
         // Genera todas las combinaciones de 2 elementos
-        Set<Set<String>> combinations = Sets.combinations(str, 3);
+        Set<Set<String>> combinations = Sets.combinations(array, size_of_agrupation);
+        int counter = 0;
 
-        for (Set<String> combo : combinations) {
-            System.out.println("The combinations are:\n" + combo);
+        for (Set<String> comb : combinations) {
+            counter++;
+            System.out.println("The combinations of " + size_of_agrupation + " are on the "
+                    + counter+  " place:\n" + comb + "\n");
+//            System.out.println();
         }
-
-
-
 
     }
 }
